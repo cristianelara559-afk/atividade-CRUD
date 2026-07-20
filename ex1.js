@@ -13,6 +13,13 @@ function buscarAluno(nome) {
   }
   return undefined;
 }
-
 console.log(buscarAluno("Larah"))
 
+function calcularMedia(notas) {
+  if (notas.length === 0) return 0;
+  let soma = 0;
+  for (let i = 0; i < notas.length; i++) {
+    soma += notas[i];
+  }
+  return soma / notas.length;
+}
