@@ -76,3 +76,23 @@ function removerAluno() {
   alert(`Aluno "${aluno.nome}" foi removido com sucesso!`);
 }
 
+function lancarNota() {
+  let nome = prompt("Digite o nome do aluno para lançar a nota:");
+  let aluno = buscarAluno(nome);
+
+  if (!aluno) {
+    alert("Aluno não encontrado!");
+    return;
+  }
+
+  let nota = Number(prompt(`Digite a nota para o aluno ${aluno.nome}:`));
+
+  if (isNaN(nota) || nota < 0 || nota > 10) {
+    alert("Nota inválida! A nota deve ser entre 0 e 10.");
+    return;
+  }
+
+  aluno.notas.push(nota);
+  alert(`Nota ${nota} adicionada com sucesso para ${aluno.nome}!`);
+}
+
