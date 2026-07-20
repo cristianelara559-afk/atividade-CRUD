@@ -121,3 +121,22 @@ function totalDeAlunos() {
   alert(`Total de alunos cadastrados: ${alunos.length}`);
 }
 
+function totalDeAlunos() {
+  alert(`Total de alunos cadastrados: ${alunos.length}`);
+}
+
+function mediaGeralDaTurma() {
+  if (alunos.length === 0) {
+    alert("Nenhum aluno cadastrado para calcular a média geral.");
+    return;
+  }
+
+  let somaMedias = 0;
+  for (let i = 0; i < alunos.length; i++) {
+    somaMedias += calcularMedia(alunos[i]);
+  }
+
+  let mediaGeral = somaMedias / alunos.length;
+  alert(`A média geral da turma é: ${mediaGeral.toFixed(2)}`);
+}
+
