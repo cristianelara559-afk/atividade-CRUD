@@ -35,3 +35,20 @@ function cadastrarAluno() {
   alunos.push({ nome: nome, notas: [] });
   alert(`Aluno "${nome}" cadastrado com sucesso!`);
 }
+
+function lancarNota() {
+  let nome = prompt("Digite o nome do aluno para lançar a nota:");
+  let aluno = buscarAluno(nome);
+
+  if (!aluno) {
+    alert("Aluno não encontrado!");
+    return;
+  }
+  let nota = parseFloat(prompt(`Digite a nota para ${aluno.nome}:`));
+  if (isNaN(nota) || nota < 0 || nota > 10) {
+    alert("Nota inválida! Digite um valor entre 0 e 10.");
+    return;
+  }
+  aluno.notas.push(nota);
+  alert(`Nota ${nota} adicionada para ${aluno.nome}!`);
+}
