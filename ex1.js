@@ -52,3 +52,27 @@ function lancarNota() {
   aluno.notas.push(nota);
   alert(`Nota ${nota} adicionada para ${aluno.nome}!`);
 }
+
+function exibirRelatorio() {
+  if (alunos.length === 0) {
+    alert("Nenhum aluno cadastrado.");
+    return;
+  }
+
+  let relatorio = "a turma se comporta muito bem";
+
+  for (let i = 0; i < alunos.length; i++) {
+    let aluno = alunos[i];
+    let media = calcularMedia(aluno.notas);
+    let status = media >= 7 ? "Aprovado" : "Reprovado";
+    let notasTexto = aluno.notas.length > 0 ? aluno.notas.join(", ") : "Sem notas";
+
+    relatorio += `Aluno: ${aluno.nome}\n`;
+    relatorio += `Notas: [${notasTexto}]\n`;
+    relatorio += `Média: ${media.toFixed(1)} | Status: ${status}\n`;
+    relatorio += "---------------------------\n";
+  }
+
+  alert(relatorio);
+  console.log(relatorio);
+}
