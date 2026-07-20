@@ -96,3 +96,24 @@ function lancarNota() {
   alert(`Nota ${nota} adicionada com sucesso para ${aluno.nome}!`);
 }
 
+function verBoletim() {
+  let nome = prompt("Digite o nome do aluno para ver o boletim:");
+  let aluno = buscarAluno(nome);
+
+  if (!aluno) {
+    alert("Aluno não encontrado!");
+    return;
+  }
+
+  let media = calcularMedia(aluno);
+  let status = situacao(media);
+  let notasTexto = aluno.notas.length > 0 ? aluno.notas.join(", ") : "Nenhuma nota cadastrada";
+
+  let boletim = `=== ${aluno.nome.toUpperCase()} ===\n` +
+                `Notas: [ ${notasTexto} ]\n` +
+                `Média: ${media.toFixed(2)}\n` +
+                `Situação: ${status}`;
+
+  alert(boletim);
+}
+
