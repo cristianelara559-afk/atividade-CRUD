@@ -35,3 +35,16 @@ function situacao(media) {
   }
 }
 
+function cadastrarAluno() {
+  let nome = prompt("Digite o nome do aluno:");
+  if (!nome) return;
+
+  if (buscarAluno(nome)) {
+    alert("Aluno já existe!");
+    return;
+  }
+
+  alunos.push({ nome: nome, notas: [] });
+  alert(`Aluno "${nome}" cadastrado com sucesso!`);
+}
+
