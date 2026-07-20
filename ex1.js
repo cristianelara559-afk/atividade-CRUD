@@ -117,3 +117,7 @@ function verBoletim() {
   alert(boletim);
 }
 
+function totalDeAlunos() {
+  alert(`Total de alunos cadastrados: ${alunos.length}`);
+}
+
