@@ -13,7 +13,6 @@ function buscarAluno(nome) {
   }
   return undefined;
 }
-console.log(buscarAluno("Larah"))
 
 function calcularMedia(notas) {
   if (notas.length === 0) return 0;
@@ -22,4 +21,17 @@ function calcularMedia(notas) {
     soma += notas[i];
   }
   return soma / notas.length;
+}
+
+function cadastrarAluno() {
+  let nome = prompt("Digite o nome do aluno:");
+  if (!nome) return;
+
+  if (buscarAluno(nome)) {
+    alert("Aluno já cadastrado!");
+    return;
+  }
+
+  alunos.push({ nome: nome, notas: [] });
+  alert(`Aluno "${nome}" cadastrado com sucesso!`);
 }
