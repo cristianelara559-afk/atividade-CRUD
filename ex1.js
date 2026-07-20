@@ -76,3 +76,35 @@ function exibirRelatorio() {
   alert(relatorio);
   console.log(relatorio);
 }
+
+function menu() {
+  let opcao = "";
+
+  while (opcao !== "4") {
+    opcao = prompt(
+      "------\n" +
+      "1. Cadastrar Aluno\n" +
+      "2. Lançar Nota\n" +
+      "3. Gerar Relatório\n" +
+      "4. Sair\n\n" +
+      "Escolha uma opção:"
+    );
+
+    switch (opcao) {
+      case "1":
+        cadastrarAluno();
+        break;
+      case "2":
+        lancarNota();
+        break;
+      case "3":
+        exibirRelatorio();
+        break;
+      case "4":
+        alert("Saindo do sistema...");
+        break;
+      default:
+        if (opcao !== null) alert("Opção inválida! Tente novamente.");
+    }
+  }
+}
