@@ -62,3 +62,17 @@ function listarAlunos() {
   alert(texto);
 }
 
+function removerAluno() {
+  let nome = prompt("Digite o nome do aluno que deseja remover:");
+  let aluno = buscarAluno(nome);
+
+  if (!aluno) {
+    alert("Aluno não encontrado!");
+    return;
+  }
+
+  let posicao = alunos.indexOf(aluno);
+  alunos.splice(posicao, 1);
+  alert(`Aluno "${aluno.nome}" foi removido com sucesso!`);
+}
+
